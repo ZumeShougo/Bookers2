@@ -1,0 +1,20 @@
+<div class = "container">
+ <%= render 'books/template' ,user:@user , book:@book %>
+
+ <div class = "col-xs-9">
+  <h2>Users</h2>
+  <table class = "table">
+   <% @users each do |user| %>
+    <tr>
+     <th>image</th>
+     <th>name</th>
+    </tr>
+    <tr>
+     <td><%= attachment_image_tag user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg",size:'20x20',format: 'no_image.jpg' %></td>
+     <td><%= user.name %></td>
+     <td><%= link_to"show" ,user_path(user.id) %></td>
+    </tr>
+   <% end %>
+  </table>
+ </div>
+</div>
