@@ -1,5 +1,5 @@
 <div class = "container">
-  <%= render'books/template',user:@user , book:@book %>
+  
   <div class= "col-xs-9">
     <h2>Book detail</h2>
     <table class='book_table' >
@@ -13,7 +13,7 @@
           <% end %>
         </td>
         <td><%= link_to @book.title %></td>
-        <td><%= @book.body %></td>
+        <td><%= @book.opinion %></td>
         <% if @book.user_id == current_user.id %>
           <td><%= link_to"edit", edit_book_path(@book.id),class:"btn-sm btn-success" %></td>
           <td><%= link_to "destroy", book_path(@book.id), class:"btn-sm btn-danger destroy(@book.id)", method: :delete,data: {confirm: "削除しますか？"} %></td>
