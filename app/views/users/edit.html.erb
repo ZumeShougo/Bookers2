@@ -10,13 +10,19 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h2>User info</h2>
       <%= form_with model:@user, local:true do |f| %>
-        <h6>Name</h6>
-        <%= f.text_field :name %>
-        <h6>Image</h6>
-        <%= f.attachment_field :profile_image %>
-        <h6>Introduction</h6>
-        <%= f.text_area :introduction %>
-        <div class = "row">
+        <div class = "form_group">
+          <h6>Name</h6>
+          <%= f.text_field :name %>
+        </div>
+        <div class = "form_group">
+          <h6>Image</h6>
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div class = "form_group">
+          <h6>Introduction</h6>
+          <%= f.text_area :introduction %>
+        </div>
+        <div class = "form_group">
           <%= f.submit "Update User", class: "col-xs-12 btn btn-secondary" %>
         </div>
       <% end %>
